@@ -6,7 +6,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        string firstname;
+        /*string firstname;
         string lastname;
         Console.Write("please enter your first name: ");
         firstname = Console.ReadLine();
@@ -15,12 +15,12 @@ class Program
 
         Console.WriteLine($"Your name is {lastname}, {firstname} {lastname}.");
 
-        int x = 10;
 
+        int x = 10;
         if (x == 10){
             Console.WriteLine("X yay");
             Console.WriteLine("Y also yay");
-        }
+        }*/
         
 
 
