@@ -1,7 +1,7 @@
 using System;
 using System.Security.Cryptography.X509Certificates;
 
-class Program
+class Program //class (both function and info)is recipie cake is an object (instance of code)
 {
     static void Main(string[] args)
     {

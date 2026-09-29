@@ -7,8 +7,19 @@ class Program
     {
         return x + y;
     }
-    static void Main(string[] args)
+
+    static void displaygreeting(string name)
     {
+        Console.WriteLine($"welcome {name}, pleased to mee you");
+    }
+    static void Main(string[] args)
+
+    {
+        displaygreeting("bob");
+        double answer = AddNumbers(12.234, 10); //same thing as below
+        //Console.WriteLine(AddNumbers(12.234, 10));
+        Console.WriteLine(answer);
+        
         /*Console.WriteLine("bonjor mi amigos");
         Console.WriteLine("Hello");
         Console.WriteLine("hey betty");*/
