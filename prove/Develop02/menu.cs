@@ -1,5 +1,6 @@
 using System.Net;
 using System.Runtime.InteropServices;
+using System.IO;
 
 class Menu
 {
@@ -7,7 +8,7 @@ class Menu
     {
         int response = 0;
 
-        while (response <= 1 || response >= 5 )
+        while (response < 1 || response > 5 )
         {
             Console.WriteLine("Welcome to the journaling program!");
             Console.WriteLine("Create, Display, Save, and Read Journal Entries");
