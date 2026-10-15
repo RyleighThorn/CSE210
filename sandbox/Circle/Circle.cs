@@ -5,10 +5,14 @@ class Program
   //public double _radius;
   static void Main()
     {
-        Circle myCircle = new Circle();
-        myCircle._radius = 10;
-        double area = myCircle.GetArea();
+      int x = 10;
 
-        Console.WriteLine(area);
+      Circle myCircle = new Circle();
+
+      //myCircle.setradius(10); now we dont need this with the constructor in program, dont need to call
+
+      double area = myCircle.GetArea();
+
+      Console.WriteLine(area);
     }
 };
