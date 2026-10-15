@@ -23,7 +23,7 @@ class Program
 
         Random number = new Random();
         Fraction pt5 = new Fraction();
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 20; i++)
         {
             int topvalue = number.Next(1, 11);
             int bottomvalue = number.Next(1, 11);
