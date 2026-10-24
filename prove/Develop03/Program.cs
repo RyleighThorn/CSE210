@@ -1,41 +1,51 @@
 using System;
-
+using System.Runtime.CompilerServices;
+using System.Security.AccessControl;
 class Program
 {
     static void Main(string[] args)
     {
-        Fraction pt1 = new Fraction();
+        bool loop = true;
+        Console.WriteLine("1. Continue");
+        Console.WriteLine("2. Quit");
 
-        Console.WriteLine(pt1.FractionString());
-        Console.WriteLine(pt1.Decimalval());
-        Fraction pt2 = new Fraction(5);
+        Word myWord = new Word("bubba"); //hardcoding the word in
+        myWord.Display();
+        myWord.IsHidden();
+        Console.WriteLine();
+        myWord.Display();
 
-        Console.WriteLine(pt2.FractionString());
-        Console.WriteLine(pt2.Decimalval());
-        Fraction pt3 = new Fraction(3, 4);
+        Scripture myScripture = new Scripture("Moses", 1, 39, "Behold this is my word and my golary to bring to pass the immortality and eternal life of man.");
+        Console.Clear();
+        myScripture.ShowScripture();
 
-        Console.WriteLine(pt3.FractionString());
-        Console.WriteLine(pt3.Decimalval());
-        Fraction pt4 = new Fraction(1, 3);
-
-        Console.WriteLine(pt4.FractionString());
-        Console.WriteLine(pt4.Decimalval());
-
-        Random number = new Random();
-        Fraction pt5 = new Fraction();
-        for (int i = 0; i < 20; i++)
-        {
-            int topvalue = number.Next(1, 11);
-            int bottomvalue = number.Next(1, 11);
-            pt5.setTop(topvalue);
-            pt5.Bottom(bottomvalue);
-            Console.Write($"Fraction {i + 1}: ");
-            Console.Write($"string: {pt5.FractionString()}");
-            Console.WriteLine($" Number: {pt5.Decimalval()}");
-
-        }
-        
+        while(loop){//make the loop so it keeps hiding words until you press q for quit
+        Console.WriteLine("");
+        Console.WriteLine("1. Continue");
+        Console.WriteLine("2. Quit");
+        Console.WriteLine("Pick an option, enter or type quit:");
+        string input = Console.ReadLine().ToLower();
+        if (input == "")
+            {
+                Console.Clear();
+                myScripture.HideRandom(3);
+                myScripture.ShowScripture();
+                if (myScripture.AllAreHidden())
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("you got all the words!");
+                    loop = false;
+                }
+                
+            }else if (input == "quit")
+            {
+                loop = false;
+            }
+            else
+            {
+                Console.WriteLine("that is not a correct reply");
+                
+            }
     }
-
-
+}
 }
