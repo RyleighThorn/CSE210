@@ -10,12 +10,15 @@ class BaseActivity
     {
         _name = name;
         _description = description;
-       // _duration = duration;
+        _duration = 0;
         //_endTime = endTime;
 
     }
 
-
+    public void DisplayDescription()
+    {
+        
+    }
     public void EndActivity()
     {
         Console.WriteLine("\nWell done!");
