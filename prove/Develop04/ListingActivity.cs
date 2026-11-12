@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 class ListingActitity : BaseActivity
 {
-    private List<string> _prompt = new List<string>
+    private List<string> _prompt2 = new List<string>
     {
         "Who are people that you appreciate?",
         "What are personal strengths of yours?",
@@ -16,49 +16,42 @@ class ListingActitity : BaseActivity
     {}
 
 public void RunListingActitity(){
-        DisplayStartMessage();
+         DisplayStartMessage();
 
         Random random = new Random();
-        DateTime endTime = DateTime.Now.AddSeconds(_duration);
         
-        Console.Clear(); 
-        //Console.WriteLine("List as many answers as you would like:\n");
-
-        string randomPrompt = _prompt[random.Next(_prompt.Count)];
-        //Console.WriteLine($"{randomPrompt}");
-        Console.WriteLine("Press Enter when you are ready");
-        Console.ReadLine();
-
-        Console.Clear(); 
-        DisplaySpinnerMessage("Get ready", 3); 
         Console.Clear();
 
+        string randomPrompt = _prompt2[random.Next(_prompt2.Count)]; //work on this part
+        Console.WriteLine("Consiter the prompt");
+        Console.WriteLine($"_____{randomPrompt}_____\n");
+        Console.WriteLine("Press enter when you are ready");
+        Console.ReadLine();
+
+        RunCountDownMessage("You may start in:", 5);
         List<string> _items = new List<string>();
-
-        
-        Console.WriteLine($"{randomPrompt}");
-       // Console.WriteLine("Start listing items (press Enter after each one):\n");
-
+        DateTime endTime = DateTime.Now.AddSeconds(_duration);
         while (DateTime.Now < endTime) // similar issue as before but you need to make sure it stores it as a list
         {
+            //List<string> _items = new List<string>();
            
             if (DateTime.Now >= endTime) break;
+            Console.WriteLine("");
+            Console.Write("> ");
+            //Console.ReadLine();
 
-            Console.Write("");
-            
-            
             string input = Console.ReadLine();
 
-       
             if (DateTime.Now >= endTime) break;
+
 
             if (!string.IsNullOrWhiteSpace(input))
             {
                 _items.Add(input);
             }
+            if (DateTime.Now >= endTime) break; 
         }
-
-        Console.WriteLine($"\n{_items.Count}");
+        Console.WriteLine($"\nTimes up! You have {_items.Count} items in your list.");
         Thread.Sleep(3000); 
 
         EndActivity();

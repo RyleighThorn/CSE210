@@ -15,14 +15,6 @@ class BaseActivity
 
     }
 
-    public void startTimer()
-    {
-        
-    }
-    public void timerHasExpired()
-    {
-        
-    }
     public void EndActivity()
     {
         DisplaySpinnerMessage("\nWell done!", 3);
@@ -84,7 +76,7 @@ class BaseActivity
     public void ObtainDuration()
     {
         //_duration = duration;
-        Console.WriteLine("how long should this last? ");
+        Console.WriteLine("How long should this activity last in seconds? ");
         _duration = int.Parse(Console.ReadLine());
         
     }

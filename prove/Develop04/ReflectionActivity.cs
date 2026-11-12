@@ -31,27 +31,26 @@ class ReflectionActitity : BaseActivity
         DisplayStartMessage();
 
         Random random = new Random();
-        DateTime endTime = DateTime.Now.AddSeconds(_duration);
         
         Console.Clear();
 
-        string randomPrompt = _prompt[random.Next(_prompt.Length?)]; //work on this part
-        Console.WriteLine($"{randomPrompt}\n");
+        string randomPrompt = _prompt[random.Next(_prompt.Count)]; //work on this part
+        Console.WriteLine("Consiter the prompt");
+        Console.WriteLine($"_____{randomPrompt}_____\n");
         Console.WriteLine("Press enter when you are ready");
         Console.ReadLine();
 
         Console.Clear();
-        DisplaySpinnerMessage("Get ready...", 3);
+        RunCountDownMessage("Now ponder each of the following questions as it relates to the prompt", 5);
         Console.Clear(); 
 
-        while (DateTime.Now < endTime)//seems to repeat the part above with writeline after doing prompt 
-        {//dont need to type responces just show 3 different 
+        DateTime endTime = DateTime.Now.AddSeconds(_duration);
+        while (DateTime.Now < endTime)//seems to count the above display spinner message as part of the loop countdown 
+        {
             string randomQuestion = _questions[random.Next(_questions.Count)];
-      
-            Console.WriteLine($"\n> {randomQuestion}\n");
 
 
-            DisplaySpinnerMessage("next question", 3);
+            DisplaySpinnerMessage($"{randomQuestion}", 7);
 
 
             if (DateTime.Now >= endTime) break;

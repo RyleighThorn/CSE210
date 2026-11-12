@@ -14,7 +14,7 @@ class Program
         Console.WriteLine("1. Breathing activity");
         Console.WriteLine("2. Reflection activity");
         Console.WriteLine("3. Listing activity");
-        Console.WriteLine("4. quit");
+        Console.WriteLine("4. Quit");
         Console.WriteLine("Pick an option by typing the correstponding number: ");
         string input = Console.ReadLine().ToLower();
         if (input == "1")
@@ -44,7 +44,6 @@ class Program
             {
                 Console.WriteLine("that is not a correct option, try again");
                 Console.ReadLine();
-                
                 
             }
     }
