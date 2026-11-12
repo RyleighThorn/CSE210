@@ -1,4 +1,4 @@
-class Person
+abstract class Person
 {
     private string _firstName;
     private string _lastName;
@@ -12,8 +12,9 @@ class Person
         _age = age;
         _weight = weight;
     }
-    public string GetPersonInfo()
+    public virtual string GetPersonInfo() //virtual sets up stadard format
     {
         return $"{_firstName} {_lastName} is {_age} years old and weighs {_weight}.";
     }
+    public abstract double GetSalary();
 }

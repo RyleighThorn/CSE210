@@ -24,41 +24,35 @@ class ReflectionActitity : BaseActivity
         "How can you keep this experience in mind in the future?"
     };
 
-    public ReflectionActitity()
-    : base ("Reflection", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.")
+    public ReflectionActitity(string name, string description)
+    : base (name, description)
     {}
-    public void TheReflectionActitity()
-    {
+    public void RunReflectionActitity(){
         DisplayStartMessage();
-        
-        
-        if (_duration <= 0) 
-        {
-            _duration = 10; 
-        }
 
         Random random = new Random();
         DateTime endTime = DateTime.Now.AddSeconds(_duration);
         
         Console.Clear();
 
-        string randomPrompt = _prompt[random.Next(_prompt.Count)];
+        string randomPrompt = _prompt[random.Next(_prompt.Length?)]; //work on this part
         Console.WriteLine($"{randomPrompt}\n");
-        Console.WriteLine("Press enter when you are ready...");
+        Console.WriteLine("Press enter when you are ready");
         Console.ReadLine();
 
         Console.Clear();
-        DisplaySpinnerMessage("next question", 3);
+        DisplaySpinnerMessage("Get ready...", 3);
         Console.Clear(); 
 
-        while (DateTime.Now < endTime)
-        {
+        while (DateTime.Now < endTime)//seems to repeat the part above with writeline after doing prompt 
+        {//dont need to type responces just show 3 different 
             string randomQuestion = _questions[random.Next(_questions.Count)];
       
             Console.WriteLine($"\n> {randomQuestion}\n");
 
 
-            DisplaySpinnerMessage("next question", 5);
+            DisplaySpinnerMessage("next question", 3);
+
 
             if (DateTime.Now >= endTime) break;
         }

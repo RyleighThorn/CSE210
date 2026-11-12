@@ -15,13 +15,19 @@ class BaseActivity
 
     }
 
-    public void DisplayDescription()
+    public void startTimer()
+    {
+        
+    }
+    public void timerHasExpired()
     {
         
     }
     public void EndActivity()
     {
-        Console.WriteLine("\nWell done!");
+        DisplaySpinnerMessage("\nWell done!", 3);
+        Console.WriteLine($"\nYou have done {_duration} seconds of the {_name} activity!");
+        
     }
     
     public void RunCountDownMessage(string message, int seconds)

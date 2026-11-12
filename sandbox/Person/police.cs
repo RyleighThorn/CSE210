@@ -6,8 +6,12 @@ class Police : Person
     {
         _weapons = weapons;
     }
-    public string GetPoliceInfo()
+    public override string GetPersonInfo() //if its not generic person override it with this
     {
-        return $"Police: weaponds: {_weapons}, {GetPersonInfo()}";
+        return $"Police: weaponds: {_weapons}, {base.GetPersonInfo()}";
+    }
+    public override double GetSalary()
+    {
+        return 150.00;
     }
 }
