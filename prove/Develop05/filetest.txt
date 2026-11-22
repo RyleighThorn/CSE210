@@ -1,0 +1,4 @@
+0
+[ ] - SimpleGoal - Goal name: test, Description: test1, Points: 5
+[ ] - EternalGoal - Goal name: test2, Description: testing, Points: 10
+System.Func`1[System.String] --- Currently Completed 0/5

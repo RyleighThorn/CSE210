@@ -13,4 +13,5 @@ class SimpleGoal : BaseGoal
     {
         return MarkComplete();
     }
+    
 }
